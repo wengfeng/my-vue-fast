@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.renren.modules.sys.dao.SysRegisterDao">
+    <select id="queryUserByMoblie" parameterType="String" resultType="io.renren.modules.sys.entity.SysUserEntity">
+        select * from sys_user where mobile = #{value};
+    </select>
+
+    <!--新增用户信息-->
+    <insert id="saveUser" parameterType="io.renren.modules.sys.form.SysLoginForm">
+        insert into sys_user (username,password,mobile) values (#{username},#{password},#{mobile});
+    </insert>
+</mapper>
